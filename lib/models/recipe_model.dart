@@ -1,8 +1,8 @@
 class RecipeModel {
-  final String image;
-  final String url;
-  final String source;
-  final String label;
+  final String? image;
+  final String? url;
+  final String? source;
+  final String? label;
 
   RecipeModel({this.image, this.url, this.label, this.source});
 
