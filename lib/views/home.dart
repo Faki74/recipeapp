@@ -116,17 +116,9 @@ class _HomeState extends State<Home> {
                           controller: textEditingController,
                           decoration: InputDecoration(
                             hintText: "Ingredients ?",
-                            hintStyle: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white.withOpacity(0.5),
-                                fontFamily: 'Overpass'),
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
-                            ),
+                            hintStyle: TextStyle(fontSize: 18),
                           ),
+                          style: TextStyle(fontSize: 18),
                         ),
                       ),
                       SizedBox(
