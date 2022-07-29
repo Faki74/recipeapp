@@ -37,7 +37,7 @@ class _HomeState extends State<Home> {
             width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                    colors: [Color(0xff213A50), Color(0xff071930)],
+                    colors: [Color(0xfff03022), Color(0xff071930)],
                     begin: FractionalOffset.topRight,
                     end: FractionalOffset.bottomLeft)),
           ),
@@ -47,9 +47,9 @@ class _HomeState extends State<Home> {
                   vertical: !kIsWeb
                       ? Platform.isIOS
                           ? 60
-                          : 30
+                          : 50
                       : 30,
-                  horizontal: 24),
+                  horizontal: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -59,19 +59,26 @@ class _HomeState extends State<Home> {
                         : MainAxisAlignment.center,
                     children: const <Widget>[
                       Text(
-                        "AppGuy",
+                        'What to ',
                         style: TextStyle(
                             fontSize: 18,
                             color: Colors.white,
                             fontFamily: 'Overpass'),
                       ),
                       Text(
-                        "Recipes",
+                        'eat',
                         style: TextStyle(
                             fontSize: 18,
                             color: Colors.blue,
                             fontFamily: 'Overpass'),
-                      )
+                      ),
+                      Text(
+                        '?',
+                        style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontFamily: 'Overpass'),
+                      ),
                     ],
                   ),
                   const SizedBox(
@@ -86,7 +93,7 @@ class _HomeState extends State<Home> {
                         fontFamily: 'Overpass'),
                   ),
                   const Text(
-                    "Just Enter Ingredients and we will show the best recipe",
+                    "Tell me what ingredients do you have and i will show you the best recipes",
                     style: TextStyle(
                         fontSize: 15,
                         color: Colors.white,
