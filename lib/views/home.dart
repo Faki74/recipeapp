@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
   List<RecipeModel> recipies = [];
   String ingridients;
   bool _loading = false;
-  String query = "banana";
+  String query = "tomato";
   TextEditingController textEditingController = TextEditingController();
 
   String applicationId = "1ea8415d";
@@ -87,15 +87,15 @@ class _HomeState extends State<Home> {
                   const Text(
                     "What will we cook chef?",
                     style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
+                        fontSize: 22,
+                        color: Colors.blue,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Overpass'),
                   ),
                   const Text(
                     "Tell me what ingredients do you have and i will show you the best recipes",
                     style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 18,
                         color: Colors.white,
                         fontWeight: FontWeight.w300,
                         fontFamily: 'OverpassRegular'),
@@ -114,7 +114,7 @@ class _HomeState extends State<Home> {
                                 color: Colors.white,
                                 fontFamily: 'Overpass'),
                             decoration: InputDecoration(
-                              hintText: "Enter Ingridients",
+                              hintText: "Ingridients ?",
                               hintStyle: TextStyle(
                                   fontSize: 18,
                                   color: Colors.white.withOpacity(0.5),
@@ -194,7 +194,7 @@ class _HomeState extends State<Home> {
                     child: GridView(
                         gridDelegate:
                             const SliverGridDelegateWithMaxCrossAxisExtent(
-                                mainAxisSpacing: 10.0,
+                                mainAxisSpacing: 50.0,
                                 maxCrossAxisExtent: 200.0),
                         shrinkWrap: true,
                         scrollDirection: Axis.vertical,

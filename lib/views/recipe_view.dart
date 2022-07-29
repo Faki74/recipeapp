@@ -49,22 +49,30 @@ class _RecipeViewState extends State<RecipeView> {
                   kIsWeb ? MainAxisAlignment.start : MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "AppGuy",
+                  'What to ',
                   style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
                       fontFamily: 'Overpass'),
                 ),
                 Text(
-                  "Recipes",
+                  'eat',
                   style: TextStyle(
                       fontSize: 18, color: Colors.blue, fontFamily: 'Overpass'),
-                )
+                ),
+                Text(
+                  '?',
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontFamily: 'Overpass'),
+                ),
               ],
             ),
           ),
           Container(
-            height: MediaQuery.of(context).size.height -
+            height: (MediaQuery.of(context).size.height) -
+                50 -
                 (Platform.isIOS ? 104 : 30),
             width: MediaQuery.of(context).size.width,
             child: WebView(
