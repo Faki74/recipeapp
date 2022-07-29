@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List<RecipeModel> recipies = [];
-  String? ingridients;
+  String ingridients;
   bool _loading = false;
   String query = "banana";
   TextEditingController textEditingController = TextEditingController();
