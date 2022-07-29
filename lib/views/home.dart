@@ -15,7 +15,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   List<RecipeModel> recipes = [];
 
-  TextEditingController textEditingController = new TextEditingController();
+  TextEditingController textEditingController = TextEditingController();
   String applicationID = "c418f30c";
   String applicationKey = "c326f454c4325f7eae2dbe3386c119ae";
   getRecipies(String query) async {
@@ -25,11 +25,11 @@ class _HomeState extends State<Home> {
     Map<String, dynamic> JsonData = jsonDecode(response.body);
     JsonData["hits"].forEach((element) {
       print(element.toString());
-      RecipeModel recipeModel = new RecipeModel();
+      RecipeModel recipeModel = RecipeModel();
       recipeModel = RecipeModel.fromMap(element["recipe"]);
       recipes.add(recipeModel);
     });
-    print("${recipes.toString()}");
+    print(recipes.toString());
   }
 
   @override
@@ -40,10 +40,10 @@ class _HomeState extends State<Home> {
         Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               gradient: LinearGradient(colors: [
-            const Color(0xfff03022),
-            const Color(0xffa99999),
+            Color(0xfff03022),
+            Color(0xffa99999),
           ])),
         ),
         Container(
@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: kIsWeb
                       ? MainAxisAlignment.start
                       : MainAxisAlignment.center,
-                  children: <Widget>[
+                  children: const <Widget>[
                     Text(
                       'What to ',
                       style: TextStyle(
@@ -85,10 +85,10 @@ class _HomeState extends State<Home> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 60,
                 ),
-                Text(
+                const Text(
                   "What will we cook chef ?",
                   style: TextStyle(
                       fontSize: 20,
@@ -96,7 +96,7 @@ class _HomeState extends State<Home> {
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Overpass'),
                 ),
-                Text(
+                const Text(
                   "Tell me what ingredients do you have and i will show you the best recipes ",
                   style: TextStyle(
                       fontSize: 15,
@@ -104,10 +104,10 @@ class _HomeState extends State<Home> {
                       fontWeight: FontWeight.w300,
                       fontFamily: 'OverpassRegular'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
-                Container(
+                SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: Row(
                     children: <Widget>[
@@ -120,16 +120,16 @@ class _HomeState extends State<Home> {
                                 fontSize: 16,
                                 color: Colors.white.withOpacity(0.5),
                                 fontFamily: 'Overpass'),
-                            enabledBorder: UnderlineInputBorder(
+                            enabledBorder: const UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
                             ),
-                            focusedBorder: UnderlineInputBorder(
+                            focusedBorder: const UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 16,
                       ),
                       InkWell(
@@ -139,7 +139,7 @@ class _HomeState extends State<Home> {
                           }
                         },
                         child: Container(
-                          child: Icon(Icons.search, color: Colors.white),
+                          child: const Icon(Icons.search, color: Colors.white),
                         ),
                       )
                     ],
@@ -155,7 +155,7 @@ class _HomeState extends State<Home> {
 class RecipieTile extends StatefulWidget {
   final String title, desc, imgUrl, url;
 
-  RecipieTile(
+  const RecipieTile(
       {required this.title,
       required this.desc,
       required this.imgUrl,
@@ -184,7 +184,7 @@ class _RecipieTileState extends State<RecipieTile> {
             if (kIsWeb) {
               _launchURL(widget.url);
             } else {
-              print(widget.url + " this is what we are going to see");
+              print("${widget.url} this is what we are going to see");
               Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -194,7 +194,7 @@ class _RecipieTileState extends State<RecipieTile> {
             }
           },
           child: Container(
-            margin: EdgeInsets.all(8),
+            margin: const EdgeInsets.all(8),
             child: Stack(
               children: <Widget>[
                 Image.network(
@@ -206,7 +206,7 @@ class _RecipieTileState extends State<RecipieTile> {
                 Container(
                   width: 200,
                   alignment: Alignment.bottomLeft,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       gradient: LinearGradient(
                           colors: [Colors.white30, Colors.white],
                           begin: FractionalOffset.centerRight,
@@ -218,14 +218,14 @@ class _RecipieTileState extends State<RecipieTile> {
                       children: <Widget>[
                         Text(
                           widget.title,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 13,
                               color: Colors.black54,
                               fontFamily: 'Overpass'),
                         ),
                         Text(
                           widget.desc,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 10,
                               color: Colors.black54,
                               fontFamily: 'OverpassRegular'),
