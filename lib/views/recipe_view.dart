@@ -7,7 +7,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 class RecipeView extends StatefulWidget {
   final String postUrl;
-  RecipeView({required this.postUrl});
+  RecipeView({@required this.postUrl});
 
   @override
   _RecipeViewState createState() => _RecipeViewState();
@@ -17,11 +17,10 @@ class _RecipeViewState extends State<RecipeView> {
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
 
-  late String finalUrl;
+  String finalUrl;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     finalUrl = widget.postUrl;
     if (widget.postUrl.contains('http://')) {

@@ -1,7 +1,7 @@
 import 'package:recipe_app/models/recipe_model.dart';
 
 class Hits {
-  RecipeModel? recipeModel;
+  RecipeModel recipeModel;
 
   Hits({this.recipeModel});
 
